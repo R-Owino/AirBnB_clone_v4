@@ -1,12 +1,12 @@
 // Checks the API status
 
 const $ = window.$;
-$(document).ready(function() {
+$(document).ready(function () {
   const amenities = {};
 
   // Function to check the API status
-  function checkApiStatus() {
-    $.get('http://0.0.0.0:5001/api/v1/status/', function(data) {
+  function checkApiStatus () {
+    $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
       if (data.status === 'OK') {
         $('#api_status').addClass('available');
       } else {
@@ -19,7 +19,7 @@ $(document).ready(function() {
   checkApiStatus();
 
   // Listen for changes on each input checkbox tag
-  $('input[type="checkbox"]').change(function() {
+  $('input[type="checkbox"]').change(function () {
     const id = $(this).data('id');
     const name = $(this).data('name');
 
